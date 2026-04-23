@@ -1,0 +1,87 @@
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f7;
+  margin: 0;
+  padding: 0;
+}
+
+/*contenedor principal*/
+#root{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.App{
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Pregunta */
+h3 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* Opciones */
+label {
+  display: block;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+label:hover {
+  background-color: #e2e6ea;
+  transform: translateY(-1px);
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Botón enviar */
+button {
+  background-color: #4f46e5; /* color violeta */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #3730a3;
+  transform: translateY(-2px);
+}
+
+/* Resultado */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+}

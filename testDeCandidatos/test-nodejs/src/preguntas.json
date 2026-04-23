@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "texto": "1)¿Qué es el event loop en Node.js?",
+    "opciones": [
+      "Un ciclo que compila código JavaScript",
+      "Un mecanismo que permite la ejecución de operaciones asíncronas en un solo hilo",
+      "Un módulo nativo para manejar eventos",
+      "Un framework para backend"
+    ],
+    "respuesta_correcta": "Un mecanismo que permite la ejecución de operaciones asíncronas en un solo hilo"
+  },
+  {
+    "id": 2,
+    "texto": "2)¿Qué sucede si llamas fs.readFileSync() en Node.js?",
+    "opciones": [
+      "Se ejecuta de manera asíncrona",
+      "Bloquea el hilo principal hasta que se complete la lectura",
+      "Lanza automáticamente un error si el archivo no existe",
+      "Solo funciona con archivos JSON"
+    ],
+    "respuesta_correcta": "Bloquea el hilo principal hasta que se complete la lectura"
+  },
+  {
+    "id": 3,
+    "texto": "3)¿Cuál es la diferencia entre process.nextTick() y setImmediate()?",
+    "opciones": [
+      "process.nextTick() se ejecuta antes que cualquier callback de IO, setImmediate() después de la fase de I/O",
+      "No hay diferencia",
+      "setImmediate() se ejecuta primero",
+      "process.nextTick() solo funciona en versiones antiguas de Node.js"
+    ],
+    "respuesta_correcta": "process.nextTick() se ejecuta antes que cualquier callback de IO, setImmediate() después de la fase de I/O"
+  },
+  {
+    "id": 4,
+    "texto": "4)¿Cuál de estas afirmaciones sobre streams es correcta?",
+    "opciones": [
+      "Solo se usan para archivos grandes",
+      "Permiten procesar datos en chunks sin cargar todo en memoria",
+      "Son sincrónicos",
+      "Solo funcionan con texto"
+    ],
+    "respuesta_correcta": "Permiten procesar datos en chunks sin cargar todo en memoria"
+  },
+  {
+    "id": 5,
+    "texto": "5)¿Qué es un buffer en Node.js?",
+    "opciones": [
+      "Una variable que almacena funciones",
+      "Un objeto para manejar datos binarios en memoria",
+      "Un tipo de evento",
+      "Un paquete npm"
+    ],
+    "respuesta_correcta": "Un objeto para manejar datos binarios en memoria"
+  },
+  {
+    "id": 6,
+    "texto": "6)¿Cuál es la ventaja de usar async/await sobre callbacks?",
+    "opciones": [
+      "Evita bloqueos en el event loop",
+      "Simplifica la lectura y manejo de código asíncrono",
+      "Es más rápido que callbacks",
+      "Evita errores de sintaxis"
+    ],
+    "respuesta_correcta": "Simplifica la lectura y manejo de código asíncrono"
+  },
+  {
+    "id": 7,
+    "texto": "7)En Express, ¿qué hace app.use(express.json())?",
+    "opciones": [
+      "Permite que Express sirva archivos JSON",
+      "Parsear automáticamente JSON en el body de las solicitudes POST/PUT",
+      "Convierte todos los datos a JSON antes de guardarlos",
+      "Solo funciona con GET requests"
+    ],
+    "respuesta_correcta": "Parsear automáticamente JSON en el body de las solicitudes POST/PUT"
+  },
+  {
+    "id": 8,
+    "texto": "8)¿Qué módulo permite crear un servidor HTTPS en Node.js?",
+    "opciones": ["http", "https", "tls", "net"],
+    "respuesta_correcta": "https"
+  },
+  {
+    "id": 9,
+    "texto": "9)En Node.js, cuál de estas afirmaciones sobre require() y import es correcta?",
+    "opciones": [
+      "require() es parte de ES Modules",
+      "import solo funciona en CommonJS",
+      "require() es CommonJS, import es ES Modules",
+      "Ambos son intercambiables sin configuración"
+    ],
+    "respuesta_correcta": "require() es CommonJS, import es ES Modules"
+  },
+  {
+    "id": 10,
+    "texto": "10)En Node.js, ¿qué pasa si una promesa lanza un error y no se maneja con .catch()?",
+    "opciones": [
+      "Node.js ignora el error",
+      "El proceso se cierra con unhandledRejection",
+      "Se imprime en consola y sigue ejecutando",
+      "Solo ocurre en versiones antiguas"
+    ],
+    "respuesta_correcta": "El proceso se cierra con unhandledRejection"
+  },
+  {
+    "id": 11,
+    "texto": "11)¿Cuál de estos métodos se usa para leer un archivo en forma de stream?",
+    "opciones": ["fs.createReadStream()", "fs.readFile()", "fs.read()", "fs.streamFile()"],
+    "respuesta_correcta": "fs.createReadStream()"
+  },
+  {
+    "id": 12,
+    "texto": "12)¿Qué es process.env.NODE_ENV y para qué se usa?",
+    "opciones": [
+      "Es una variable que indica el entorno de ejecución (desarrollo, producción)",
+      "Define el puerto del servidor",
+      "Contiene todas las variables locales",
+      "Es obligatoria para ejecutar Node.js"
+    ],
+    "respuesta_correcta": "Es una variable que indica el entorno de ejecución (desarrollo, producción)"
+  },
+  {
+    "id": 13,
+    "texto": "13)En Node.js, ¿qué diferencia hay entre setTimeout() y setInterval()?",
+    "opciones": [
+      "setTimeout() ejecuta una función repetidamente",
+      "setInterval() ejecuta una función solo una vez",
+      "setTimeout() ejecuta una función una sola vez después de un tiempo",
+      "Ambos son idénticos"
+    ],
+    "respuesta_correcta": "setTimeout() ejecuta una función una sola vez después de un tiempo"
+  },
+  {
+    "id": 14,
+    "texto": "14)¿Cuál es la función de process.on('uncaughtException')?",
+    "opciones": [
+      "Manejar errores asíncronos de promesas",
+      "Capturar errores no manejados en el hilo principal",
+      "Reiniciar el servidor automáticamente",
+      "Guardar logs en la base de datos"
+    ],
+    "respuesta_correcta": "Capturar errores no manejados en el hilo principal"
+  },
+  {
+    "id": 15,
+    "texto": "15)¿Qué patrón de diseño es más común en Node.js para modularizar rutas y controladores en Express?",
+    "opciones": ["Singleton", "Factory", "MVC (Model-View-Controller)", "Observer"],
+    "respuesta_correcta": "MVC (Model-View-Controller)"
+  },
+  {
+    "id": 16,
+    "texto": "16)¿Cuál de estas afirmaciones sobre el módulo cluster es correcta?",
+    "opciones": [
+      "Permite ejecutar Node.js en múltiples hilos de manera nativa",
+      "Permite dividir el trabajo en múltiples procesos para aprovechar CPU multicore",
+      "No sirve en producción",
+      "Solo funciona en Linux"
+    ],
+    "respuesta_correcta": "Permite dividir el trabajo en múltiples procesos para aprovechar CPU multicore"
+  },
+  {
+    "id": 17,
+    "texto": "17)¿Qué ventaja tiene usar npm scripts en package.json?",
+    "opciones": [
+      "Permite ejecutar comandos personalizados con npm run",
+      "Instala dependencias automáticamente",
+      "Compila código JavaScript a Node.js",
+      "Solo funciona con nodemon"
+    ],
+    "respuesta_correcta": "Permite ejecutar comandos personalizados con npm run"
+  },
+  {
+    "id": 18,
+    "texto": "18)¿Cuál de estos no es un método de EventEmitter?",
+    "opciones": [".on()", ".emit()", ".listen()", ".once()"],
+    "respuesta_correcta": ".listen()"
+  },
+  {
+    "id": 19,
+    "texto": "19)En Node.js, ¿qué significa que es “single-threaded”?",
+    "opciones": [
+      "Solo puede ejecutar un programa a la vez",
+      "Solo tiene un hilo principal, pero maneja operaciones asíncronas con event loop",
+      "No puede usar la CPU al máximo",
+      "Es exclusivo para aplicaciones pequeñas"
+    ],
+    "respuesta_correcta": "Solo tiene un hilo principal, pero maneja operaciones asíncronas con event loop"
+  },
+  {
+    "id": 20,
+    "texto": "20)¿Qué ocurre si llamas a res.send() en Express más de una vez en la misma ruta?",
+    "opciones": [
+      "Se concatena el contenido",
+      "Lanza un error Cannot set headers after they are sent",
+      "Ignora la segunda llamada",
+      "Sobrescribe la primera respuesta sin error"
+    ],
+    "respuesta_correcta": "Lanza un error Cannot set headers after they are sent"
+  }
+]
