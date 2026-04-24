@@ -1,0 +1,11 @@
+.dockerignore
+.openapi-generator-ignore
+README.md
+pom.xml
+src/gen/java/com/cowshop/RestApplication.java
+src/gen/java/com/cowshop/RestResourceRoot.java
+src/gen/java/com/cowshop/api/ProductsApi.java
+src/main/docker/Dockerfile.jvm
+src/main/docker/Dockerfile.native
+src/main/resources/META-INF/openapi.yaml
+src/main/resources/application.properties

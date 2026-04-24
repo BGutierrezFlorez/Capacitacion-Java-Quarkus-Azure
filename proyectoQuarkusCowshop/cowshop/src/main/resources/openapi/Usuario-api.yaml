@@ -1,0 +1,189 @@
+openapi: 3.0.0
+info:
+  title: CowShop API
+  version: 1.0.0
+  description: API para gestionar los usuarios y roles del sistema CowShop.
+
+servers:
+  - url: http://localhost:8080/v1
+
+paths:
+  /v1/usuarios:
+    get:
+      summary: Obtener todos los usuarios
+      operationId: getUsuarios
+      tags:
+        - Usuarios
+      responses:
+        "200":
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Usuario"
+
+    post:
+      summary: Registrar un nuevo usuario
+      operationId: registrarUsuario
+      tags:
+        - Usuarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Usuario"
+      responses:
+        "201":
+          description: Usuario creado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Usuario"
+
+  /v1/usuarios/{id}:
+    get:
+      summary: Obtener un usuario por ID
+      operationId: getUsuarioById
+      tags:
+        - Usuarios
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Usuario encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Usuario"
+        "404":
+          description: Usuario no encontrado
+
+    put:
+      summary: Actualizar un usuario
+      operationId: actualizarUsuario
+      tags:
+        - Usuarios
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Usuario"
+      responses:
+        "200":
+          description: Usuario actualizado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Usuario"
+
+    delete:
+      summary: Eliminar un usuario
+      operationId: eliminarUsuario
+      tags:
+        - Usuarios
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Usuario eliminado
+
+  /v1/login:
+    post:
+      summary: Validar el login de un usuario
+      operationId: login
+      tags:
+        - Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Login correcto
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+        "401":
+          description: Credenciales inválidas
+
+  /v1/roles:
+    get:
+      summary: Obtener todos los roles
+      operationId: getRoles
+      tags:
+        - Roles
+      responses:
+        "200":
+          description: Lista de roles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Rol"
+
+components:
+  schemas:
+
+    Usuario:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+        cedula:
+          type: string
+        correo:
+          type: string
+        clave:
+          type: string
+        rol:
+          $ref: "#/components/schemas/Rol"
+
+    Rol:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+
+    LoginRequest:
+      type: object
+      properties:
+        correo:
+          type: string
+        clave:
+          type: string
+
+    LoginResponse:
+      type: object
+      properties:
+        mensaje:
+          type: string
+        exito:
+          type: boolean
+        usuario:
+          $ref: "#/components/schemas/Usuario"
